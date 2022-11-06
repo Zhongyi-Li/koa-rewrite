@@ -21,21 +21,28 @@ class Koa {
         const ctx = Object.create(this.context)
         const request = Object.create(this.request)
         const response = Object.create(this.response)
-        
-        //原生对象
-        ctx.req = req
-        ctx.res = res
 
-        //koa扩展对象
+        //扩展
         ctx.request = request
-        ctx.request.req = req
         ctx.response = response
+
+        //原生
+        ctx.req = ctx.request.req = req
+        ctx.res = ctx.response.res = res
+
         return ctx
     }
 
     handleRequest=(req,res)=>{
         const ctx = this.createContext(req,res)
         this.middleWare(ctx)
+
+        ctx.res.statusCode = 404
+        if(ctx.body){
+            res.end(ctx.body)
+        }else{
+            res.end('Not found ')
+        }
     }
 
     listen(...args){
