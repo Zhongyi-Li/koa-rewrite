@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #page {
+        position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        height: 200px;
+      }
+      .nav {
+        height: 42px;
+        border-bottom: 1px solid #000;
+      }
+
+      .nav ul {
+        display: flex;
+        height: 100%;
+      }
+      .nav ul li {
+        cursor: pointer;
+        flex: 1;
+      }
+
+      .menu {
+        width: 100%;
+        position: absolute;
+        top: 42px;
+        background-color: blanchedalmond;
+        transition: height 0.2s;
+        height: 0;
+        /* visibility: hidden; */
+      }
+
+      .menu:hover {
+        height: 49px;
+      }
+
+      .nav:hover .menu {
+        /* visibility: visible; */
+        border-top: 19px solid #fff;
+        height: 59px;
+      }
+
+      .content {
+        height: 100px;
+        background-color: cadetblue;
+      }
+
+      /* #outarrow {
+        border-color: transparent transparent #efefef;
+        border-style: solid;
+        border-width: 26px;
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 12px;
+      }
+
+      #innerarrow {
+        border-color: transparent transparent white;
+        border-style: solid;
+        border-width: 26px;
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 12px;
+        margin-top: 6px;
+      } */
+    </style>
+    <div id="page">
+      <div class="nav">
+        <ul>
+          <li class="home-word">Home</li>
+          <li>Order</li>
+          <li>My Address</li>
+          <li>Intive</li>
+          <li>Integral</li>
+          <li>Clearance</li>
+        </ul>
+        <!-- <div id="outarrow"></div> -->
+        <!-- <div id="innerarrow"></div> -->
+        <div class="menu"></div>
+      </div>
+      <div class="content"></div>
+    </div>
+    <script></script>
+  </body>
+</html>
